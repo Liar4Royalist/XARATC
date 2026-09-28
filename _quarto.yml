@@ -27,6 +27,9 @@ format:
   pdf:
     documentclass: book
     papersize: a4
+    fontsize: 12pt
+    geometry:
+      - margin=20mm
     pdf-engine: xelatex
     colorlinks: true
     mainfont: "Noto Serif CJK SC"
