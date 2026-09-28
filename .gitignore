@@ -1,0 +1,11 @@
+/.quarto/
+/.quarto-build/
+/_book/
+/dist/
+/index.aux
+/index.log
+/index.out
+/index.pdf
+/index.tex
+/index.toc
+**/*.quarto_ipynb
