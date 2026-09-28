@@ -1,0 +1,38 @@
+project:
+  type: book
+  output-dir: _book
+  pre-render: node scripts/prepare-quarto-build.mjs
+
+book:
+  title: "当代西藏作物种植史的政治学叙事"
+  output-file: XARATC
+  chapters:
+    - index.qmd
+    - .quarto-build/abstract-zh.qmd
+    - .quarto-build/abstract-en.qmd
+    - .quarto-build/introduction.qmd
+    - .quarto-build/chapter-01.qmd
+    - .quarto-build/chapter-02.qmd
+    - .quarto-build/chapter-03.qmd
+    - .quarto-build/chapter-04.qmd
+    - .quarto-build/conclusion.qmd
+    - .quarto-build/references.qmd
+
+lang: zh-CN
+toc: true
+toc-depth: 2
+number-sections: false
+
+format:
+  pdf:
+    documentclass: book
+    papersize: a4
+    pdf-engine: xelatex
+    colorlinks: true
+    mainfont: "Noto Serif CJK SC"
+    sansfont: "Noto Sans CJK SC"
+    monofont: "Noto Sans Mono CJK SC"
+    CJKmainfont: "Noto Serif CJK SC"
+    CJKsansfont: "Noto Sans CJK SC"
+    CJKmonofont: "Noto Sans Mono CJK SC"
+  epub: default
