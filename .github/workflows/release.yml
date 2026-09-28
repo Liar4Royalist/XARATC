@@ -65,11 +65,21 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tinytex: true
+
+      - name: Install TinyTeX
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QUARTO_TEXLIVE_BINPATH: ${{ runner.temp }}/tinytex-bin
+        run: |
+          # Quarto leaves TinyTeX off PATH unless --update-path is requested.
+          quarto install tinytex --no-prompt --update-path
+          echo "$QUARTO_TEXLIVE_BINPATH" >> "$GITHUB_PATH"
 
       - name: Install CJK TeX support
-        run: tlmgr install xecjk
+        run: |
+          tlmgr --version
+          tlmgr install xecjk
+          kpsewhich xeCJK.sty
 
       - name: Render book
         run: |
