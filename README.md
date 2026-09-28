@@ -9,9 +9,11 @@
 安装 TinyTeX：
 
 ```sh
-quarto install tinytex
+quarto install tinytex --update-path
 tlmgr install xecjk
 ```
+
+`--update-path` 让后续命令可以调用 `tlmgr`；安装后如仍提示找不到命令，请重新打开终端。CI 将 TinyTeX 命令目录写入 `GITHUB_PATH`，供后续步骤使用。
 
 在 Ubuntu 上安装字体：
 
